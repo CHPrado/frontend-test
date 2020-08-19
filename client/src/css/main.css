@@ -1,0 +1,277 @@
+.flex, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-home .content main ul li, #page-home .content main ul li span, #page-create-user, #page-create-user form, #page-create-user form .field-group, #page-create-user form .field-group .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#page-home {
+  height: 100vh;
+}
+
+#page-home .content {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#page-home .content header {
+  margin: 40px auto 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#page-home .content header h1 {
+  font-size: 35px;
+  color: #263238;
+}
+
+#page-home .content header a {
+  width: 100%;
+  max-width: 360px;
+  height: 50px;
+  border-radius: 8px;
+  margin-top: 40px;
+  text-decoration: none;
+  background: #234581;
+}
+
+#page-home .content header a strong {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  color: #FFF;
+}
+
+#page-home .content header a:hover {
+  background: #002e80;
+}
+
+#page-home .content main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#page-home .content main ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  list-style: none;
+}
+
+#page-home .content main ul li {
+  background: #FFF;
+  border: 2px solid #FFF;
+  border-radius: 8px;
+  padding: 32px 24px 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+#page-home .content main ul li img {
+  border-radius: 8px;
+  width: 300px;
+}
+
+#page-home .content main ul li span {
+  margin-top: 12px;
+  color: #6C6C80;
+}
+
+#page-home .content main ul li button {
+  margin-top: 12px;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  border: solid #6C6C80;
+  cursor: pointer;
+}
+
+#page-home .content main ul li button svg {
+  color: #6C6C80;
+}
+
+#page-home .content main ul li button:hover {
+  border: solid #e00e0e;
+}
+
+#page-home .content main ul li button:hover svg {
+  color: #e00e0e;
+}
+
+@media (max-width: 900px) {
+  #page-home .content {
+    text-align: center;
+  }
+  #page-home .content header {
+    margin: 48px auto 20px;
+  }
+  #page-home .content main ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    list-style: none;
+  }
+}
+
+#page-create-user {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+#page-create-user form {
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 730px;
+  background: #FFF;
+  border-radius: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#page-create-user form h1 {
+  font-size: 35px;
+  color: #263238;
+  margin-bottom: 20px;
+}
+
+#page-create-user form .field-group {
+  width: 100%;
+}
+
+#page-create-user form .field-group .field {
+  width: 100%;
+  margin-bottom: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#page-create-user form .field-group .field input {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: #F0F0F5;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #6C6C80;
+}
+
+#page-create-user form .field-group .field input::-webkit-input-placeholder {
+  color: #A0A0B2;
+}
+
+#page-create-user form .field-group .field input:-ms-input-placeholder {
+  color: #A0A0B2;
+}
+
+#page-create-user form .field-group .field input::-ms-input-placeholder {
+  color: #A0A0B2;
+}
+
+#page-create-user form .field-group .field input::placeholder {
+  color: #A0A0B2;
+}
+
+#page-create-user form .field-group .field + .field {
+  margin-left: 24px;
+}
+
+#page-create-user form button {
+  width: 100%;
+  height: 50px;
+  background: #234581;
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+#page-create-user form button:hover {
+  background: #002e80;
+}
+
+@media (max-width: 900px) {
+  #page-create-user form .field-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #page-create-user form .field-group .field + .field {
+    margin-left: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #f2f4f5;
+  -webkit-font-smoothing: antialiased;
+  color: #6C6C80;
+}
+
+body, input, button {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #263238;
+  font-family: Ubuntu;
+}
+/*# sourceMappingURL=main.css.map */

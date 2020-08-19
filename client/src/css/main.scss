@@ -1,0 +1,35 @@
+$primary-color: #234581;
+$title-color: #263238;
+$text-color: #6C6C80;
+$background-color: #f2f4f5;
+$button-hover-color: #002e80;
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import '../pages/Home/styles';
+@import '../pages/CreateUser/styles';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $background-color;
+  -webkit-font-smoothing: antialiased;
+  color: $text-color;
+}
+
+body, input, button {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $title-color;
+  font-family: Ubuntu;
+}
