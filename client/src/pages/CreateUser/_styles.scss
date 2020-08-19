@@ -35,18 +35,23 @@
         align-items: flex-start;
 
         input {
-          width: 100%;
           flex: 1;
-          background: #F0F0F5;
-          border-radius: 8px;
-          border: 0;
+          width: 100%;
           padding: 16px 24px;
           font-size: 16px;
-          color: #6C6C80;
+          border-radius: 8px;
+          border: 2px solid #A0A0A9;
+          color: $text-color;
         }
 
         input::placeholder {
-          color: #A0A0B2;
+          color: #A0A0A9;
+        }
+
+        input:focus {
+          outline: none !important;
+          border: 2px solid $primary-color;
+          box-shadow: 0 0 5px #719ECE;
         }
       }
 

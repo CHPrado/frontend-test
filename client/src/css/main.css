@@ -187,32 +187,38 @@
 }
 
 #page-create-user form .field-group .field input {
-  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background: #F0F0F5;
-  border-radius: 8px;
-  border: 0;
+  width: 100%;
   padding: 16px 24px;
   font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #A0A0A9;
   color: #6C6C80;
 }
 
 #page-create-user form .field-group .field input::-webkit-input-placeholder {
-  color: #A0A0B2;
+  color: #A0A0A9;
 }
 
 #page-create-user form .field-group .field input:-ms-input-placeholder {
-  color: #A0A0B2;
+  color: #A0A0A9;
 }
 
 #page-create-user form .field-group .field input::-ms-input-placeholder {
-  color: #A0A0B2;
+  color: #A0A0A9;
 }
 
 #page-create-user form .field-group .field input::placeholder {
-  color: #A0A0B2;
+  color: #A0A0A9;
+}
+
+#page-create-user form .field-group .field input:focus {
+  outline: none !important;
+  border: 2px solid #234581;
+  -webkit-box-shadow: 0 0 5px #719ECE;
+          box-shadow: 0 0 5px #719ECE;
 }
 
 #page-create-user form .field-group .field + .field {
