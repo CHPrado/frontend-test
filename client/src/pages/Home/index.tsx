@@ -2,18 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
-import { FiTrash2 } from 'react-icons/fi';
 
-interface UserProps {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  avatar: string;
-}
+import { UserProps } from '../../interfaces';
+import UserCard from '../../components/UserCard';
 
-const Home: React.FC = () => {
+const Home = () => {
   const [users, setUsers] = useState<UserProps[]>([]);
 
   useEffect(() => {
@@ -46,20 +39,7 @@ const Home: React.FC = () => {
 
         <main>
           <ul>
-            {users.map((user) => (
-              <li key={user.id}>
-                <img src={user.avatar} alt={user.username} />
-                
-                <span>{user.name}</span>
-                <span>{user.username}</span>
-                <span>{user.email}</span>
-                <span>{user.phone}</span>
-
-                <button onClick={(): Promise<void> => handleDeleteUser(user.id)} type="button">
-                  <FiTrash2 size={20} />
-                </button>
-              </li>
-            ))}
+            {users.map((user) => <UserCard key={user.id} user={user} handleDeleteUser={handleDeleteUser} />)}
           </ul>
         </main>
       </div>

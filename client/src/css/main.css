@@ -1,4 +1,4 @@
-.flex, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-home .content main ul li, #page-home .content main ul li span, #page-create-user, #page-create-user form, #page-create-user form .field-group, #page-create-user form .field-group .field {
+.flex, li, li span, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-create-user, #page-create-user form, #page-create-user form .field-group, #page-create-user form .field-group .field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,6 +8,52 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+li {
+  background: #FFF;
+  border: 2px solid #FFF;
+  border-radius: 8px;
+  padding: 32px 24px 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+li img {
+  border-radius: 10rem;
+  width: 300px;
+}
+
+li span {
+  margin-top: 12px;
+  color: #6C6C80;
+}
+
+li button {
+  margin-top: 12px;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  border: solid #6C6C80;
+  cursor: pointer;
+}
+
+li button svg {
+  color: #6C6C80;
+}
+
+li button:hover {
+  border: solid #e00e0e;
+}
+
+li button:hover svg {
+  color: #e00e0e;
 }
 
 #page-home {
@@ -80,52 +126,6 @@
       grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   list-style: none;
-}
-
-#page-home .content main ul li {
-  background: #FFF;
-  border: 2px solid #FFF;
-  border-radius: 8px;
-  padding: 32px 24px 16px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-}
-
-#page-home .content main ul li img {
-  border-radius: 8px;
-  width: 300px;
-}
-
-#page-home .content main ul li span {
-  margin-top: 12px;
-  color: #6C6C80;
-}
-
-#page-home .content main ul li button {
-  margin-top: 12px;
-  width: 100%;
-  height: 50px;
-  background: transparent;
-  border-radius: 8px;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-  border: solid #6C6C80;
-  cursor: pointer;
-}
-
-#page-home .content main ul li button svg {
-  color: #6C6C80;
-}
-
-#page-home .content main ul li button:hover {
-  border: solid #e00e0e;
-}
-
-#page-home .content main ul li button:hover svg {
-  color: #e00e0e;
 }
 
 @media (max-width: 900px) {
