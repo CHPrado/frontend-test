@@ -10,6 +10,8 @@ $button-hover-color: #002e80;
   align-items: center;
 }
 
+@import '../components/UserCard/styles';
+@import '../components/Snack/styles';
 @import '../pages/Home/styles';
 @import '../pages/CreateUser/styles';
 

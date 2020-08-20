@@ -33,13 +33,13 @@ li {
     svg {
       color: $text-color;
     }
-  }
 
-  button:hover {
-    border: solid #e00e0e;
-
-    svg {
-      color: #e00e0e;
+    &:hover {
+      border: solid #e00e0e;
+  
+      svg {
+        color: #e00e0e;
+      }
     }
   }
 }

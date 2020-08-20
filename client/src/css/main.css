@@ -1,4 +1,4 @@
-.flex, li, li span, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-create-user, #page-create-user form, #page-create-user form .field-group, #page-create-user form .field-group .field {
+.flex, li, li span, .snack-box, .snack-box .snack-icon, .snack-box .snack-close, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-create-user, #page-create-user form, #page-create-user form .field-group, #page-create-user form .field-group .field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,6 +54,104 @@ li button:hover {
 
 li button:hover svg {
   color: #e00e0e;
+}
+
+.snack-container {
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 30px;
+  width: 100%;
+  z-index: 50;
+}
+
+.snack-container.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.snack-container.hide {
+  display: none;
+}
+
+.snack-box {
+  border-radius: 8px;
+  padding: 10px;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.snack-box svg {
+  color: #FFF;
+}
+
+.snack-box .snack-icon {
+  padding: 2px;
+  margin: 2px;
+}
+
+.snack-box .snack-message {
+  width: 100%;
+  margin: 10px;
+}
+
+.snack-box .snack-message strong, .snack-box .snack-message .snack-message strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: #FFF;
+}
+
+.snack-box .snack-close {
+  padding: 2px;
+  margin: 2px;
+  border-radius: 100%;
+  -webkit-transition: -webkit-filter 0.2s;
+  transition: -webkit-filter 0.2s;
+  transition: filter 0.2s;
+  transition: filter 0.2s, -webkit-filter 0.2s;
+  cursor: pointer;
+}
+
+.snack-box.success {
+  background: #4caf50;
+}
+
+.snack-box.info {
+  background: #2196f3;
+}
+
+.snack-box.warn {
+  background: #ff9800;
+}
+
+.snack-box.error {
+  background: #f44336;
+}
+
+.snack-box .snack-close.success {
+  background: #4caf50;
+}
+
+.snack-box .snack-close.info {
+  background: #2196f3;
+}
+
+.snack-box .snack-close.warn {
+  background: #ff9800;
+}
+
+.snack-box .snack-close.error {
+  background: #f44336;
+}
+
+.snack-box .snack-close:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
 }
 
 #page-home {
@@ -136,12 +234,8 @@ li button:hover svg {
     margin: 48px auto 20px;
   }
   #page-home .content main ul {
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
-    list-style: none;
   }
 }
 
@@ -186,6 +280,10 @@ li button:hover svg {
           align-items: flex-start;
 }
 
+#page-create-user form .field-group .field + .field {
+  margin-left: 24px;
+}
+
 #page-create-user form .field-group .field input {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -219,10 +317,6 @@ li button:hover svg {
   border: 2px solid #234581;
   -webkit-box-shadow: 0 0 5px #719ECE;
           box-shadow: 0 0 5px #719ECE;
-}
-
-#page-create-user form .field-group .field + .field {
-  margin-left: 24px;
 }
 
 #page-create-user form button {

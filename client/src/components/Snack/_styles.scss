@@ -1,0 +1,99 @@
+$success-color: #4caf50;
+$info-color: #2196f3;
+$warn-color: #ff9800;
+$error-color: #f44336;
+
+.snack-container {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 30px;
+  width: 100%;
+  z-index: 50;
+
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.snack-box {
+  @extend .flex;
+
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  svg {
+    color: #FFF;
+  }
+
+  .snack-icon {
+    @extend .flex;
+
+    padding: 2px;
+    margin: 2px;
+  }
+
+  .snack-message {
+    width: 100%;
+    margin: 10px;
+
+    strong, .snack-message strong {
+      font-size: 15px;
+      font-weight: 500;
+      color: #FFF;
+    }
+  }
+
+  .snack-close {
+    @extend .flex;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 100%;
+    transition: filter 0.2s;
+    cursor: pointer;
+  }
+
+  &.success {
+    background: $success-color;
+  }
+
+  &.info {
+    background: $info-color;
+  }
+
+  &.warn {
+    background: $warn-color;
+  }
+
+  &.error {
+    background: $error-color;
+  }
+
+  .snack-close {
+    &.success {
+      background: $success-color;
+    }
+
+    &.info {
+      background: $info-color;
+    }
+
+    &.warn {
+      background: $warn-color;
+    }
+
+    &.error {
+      background: $error-color;
+    }
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+}

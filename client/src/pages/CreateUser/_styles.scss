@@ -34,6 +34,10 @@
         flex-direction: column;
         align-items: flex-start;
 
+        + .field {
+          margin-left: 24px;
+        }
+
         input {
           flex: 1;
           width: 100%;
@@ -42,21 +46,17 @@
           border-radius: 8px;
           border: 2px solid #A0A0A9;
           color: $text-color;
-        }
 
-        input::placeholder {
-          color: #A0A0A9;
-        }
+          &::placeholder {
+            color: #A0A0A9;
+          }
 
-        input:focus {
-          outline: none !important;
-          border: 2px solid $primary-color;
-          box-shadow: 0 0 5px #719ECE;
+          &:focus {
+            outline: none !important;
+            border: 2px solid $primary-color;
+            box-shadow: 0 0 5px #719ECE;
+          }
         }
-      }
-
-      .field + .field {
-        margin-left: 24px;
       }
     }
 
@@ -73,10 +73,10 @@
       margin-top: 20px;
       transition: background-color 0.2s;
       cursor: pointer;
-    }
 
-    button:hover {
-      background: $button-hover-color;
+      &:hover {
+        background: $button-hover-color;
+      }
     }
   }
 }
