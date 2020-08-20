@@ -1,45 +1,33 @@
 # Frontend Challenge
-Objetivo deste teste é avaliar seus conhecimentos em organização, estilo, boas práticas e habilidades em frontend.
 
 ## Estrutura do projeto
-`/client`
-
-Esta é a pasta onde deve ser desenvolvido o projeto, possui um `package.json` padrão, instale as dependências que achar necessário.
-
-
-Caso utilize CRA (Create React App) apague esta pasta e crie o projeto com CRA com mesmo nome
 
 `/server`
 
-Esta pasta contém a API necessária para o desenvolvimento do projeto.
-Para subir a API, entre na pasta e instale as dependências com `npm install` e depois `npm start`
+API pronta para para requisições.
+Para subir a API, entre na pasta e instale as dependências com `npm install` e depois `npm start`.
 
+Informações necessárias para interação com a API em `http://localhost:9004/`.
 
-Você terá as informações necessárias para interação com a API em `http://localhost:9004/`
+`/client`
 
-## Requisitos
-- HTML (deixe o mais semântico possível)
-- CSS (pré-processador opcional)
-- JS (React + Redux)
-- Responsivo
-- Testar as principais funcionalidades
-- Static Type Checking
+Para rodar o client, entre na pasta e instale as dependências com `npm install` e depois `npm start`.
 
-## Proposta
-- A aplicação deve mostrar primeiramente uma listagem de usuário com todas informações presentes na API.
-- Deve permitir a criação de novo usuário
-- Deve permitir excluir um usuário
-- Criar um README explicando como utilizar seu projeto
+## Funcionamento
 
-## O que apreciamos
-- Feedbacks visuais e motions
-- HTML semântico
-- CSS Grid e Flexbox
-- Metodologias como BEM, SMACSS e outras
-- ES6+
-- React Hooks
-- Testes unitários
-- Código limpo e bem organizado
+### / (home)
 
-### Finalizando
-Ao finalizar o desenvolvimento, envie um zip do projeto para rh@yapay.com.br  
+Na pagina inicial, rota `'/'` estarão listados todos os usuários cadastrados na API.
+As informações dos usuários são exibidas em um card, contendo a foto de avatar, nome, nome de usuário, e-mail e telefone.
+
+É possível excluir um usuário clicando no botão da lixeira e clicando em `'Confirmar'` na tela de alerta que será exibida. Ao confirmar, o usuário será excluído da API e uma mensagem de `'Usuário excluído!'` será exibida na parte inferior da tela.
+
+Ao clicar no botão `'Cadastre um novo usário'`, será redirecionado para a página contendo o formulário para o cadastro de usuário.
+
+### /create-user
+
+Na página de cadastro de usuário, rota `'/create-user'` terá os campos de avatar, nome, nome de usuário, e-mail e telefone de preenchimento obrigatório para cadastro.
+
+Após o preenchimento de todos os campos, ao clicar no botão `'Cadastrar usuário'` será salvo na API o registro e uma mensagem de `'Usuário criado!'` será exibida na parte inferior da tela.
+
+Após a criação do usuário, será feito o redirecionamento para a página inicial.
