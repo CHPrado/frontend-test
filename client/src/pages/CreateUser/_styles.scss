@@ -22,6 +22,33 @@
       margin-bottom: 20px;
     }
 
+    .avatar {
+      @extend .flex;
+      flex-direction: column;
+      border-radius: 10rem;
+        width: 300px;
+    
+      margin-top: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      
+      img {
+        border-radius: 10rem;
+        width: 300px;
+      }
+      
+      img:hover {
+        filter: brightness(90%);
+      }
+      
+      strong {
+        margin: 5px;
+        color: #737380;
+        line-height: 21px;
+        font-size: 16px;
+      }
+    }
+
     .field-group {
       width: 100%;
       @extend .flex;

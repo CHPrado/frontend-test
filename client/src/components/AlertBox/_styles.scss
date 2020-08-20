@@ -1,0 +1,148 @@
+$success-color: #4caf50;
+$info-color: #2196f3;
+$warn-color: #ff9800;
+$error-color: #f44336;
+
+.alert-container {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.5);
+  z-index: 50;
+
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.alert-box {
+  @extend .flex;
+  flex-direction: column;
+
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  .title-container {
+    @extend .flex;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    background: $primary-color;
+
+    strong {
+      width: 100%;
+      text-align: center;
+      color: #FFF;
+    }
+
+    .alert-close {
+      @extend .flex;
+      padding: 2px;
+      margin: 2px;
+      border-radius: 100%;
+      transition: filter 0.2s;
+      background: $primary-color;
+      cursor: pointer;
+  
+      &:hover {
+        filter: brightness(90%);
+      }
+
+      svg {
+        color: #FFF;
+      }
+    }
+  }
+
+  .message-container {
+    @extend .flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+
+    .alert-icon {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      &.success {
+        svg {
+          color: $success-color;
+        }
+      }
+
+      &.info {
+        svg {
+          background: $info-color;
+        }
+      }
+
+      &.warn {
+        svg {
+          color: $warn-color;
+        }
+      }
+
+      &.error {
+        svg {
+          background: $error-color;
+        }
+      }
+    }
+
+    .alert-message {
+      width: 100%;
+      margin: 10px;
+      text-align: center;
+  
+      strong {
+        font-size: 16px;
+        font-weight: 500;
+        color: $text-color;
+      }
+    }
+  }
+
+  .buttons-container {
+    @extend .flex;
+    width: 100%;
+    padding: 10px;
+
+    button {
+      width: 100%;
+      height: 30px;
+      border-radius: 8px;
+      color: #FFF;
+      font-weight: bold;
+      font-size: 16px;
+      border: 0;
+      margin: 10px;
+      padding: 5px;
+      transition: background-color 0.2s;
+      cursor: pointer;
+      background: $text-color;
+
+      &:hover {
+        background: $button-hover-color;
+      }
+    }
+
+    .button-confirm {
+      background: $primary-color;
+
+      &:hover {
+        background: $button-hover-color;
+      }
+    }
+  }
+}

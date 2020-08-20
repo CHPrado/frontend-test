@@ -1,4 +1,4 @@
-.flex, li, li span, .snack-box, .snack-box .snack-icon, .snack-box .snack-close, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-create-user, #page-create-user form, #page-create-user form .field-group, #page-create-user form .field-group .field {
+.flex, li, li span, .snack-box, .snack-box .snack-icon, .snack-box .snack-close, .alert-box, .alert-box .title-container, .alert-box .title-container .alert-close, .alert-box .message-container, .alert-box .buttons-container, #page-home .content, #page-home .content header, #page-home .content header a, #page-home .content main, #page-create-user, #page-create-user form, #page-create-user form .avatar, #page-create-user form .field-group, #page-create-user form .field-group .field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,7 +100,7 @@ li button:hover svg {
   margin: 10px;
 }
 
-.snack-box .snack-message strong, .snack-box .snack-message .snack-message strong {
+.snack-box .snack-message strong {
   font-size: 15px;
   font-weight: 500;
   color: #FFF;
@@ -115,22 +115,6 @@ li button:hover svg {
   transition: filter 0.2s;
   transition: filter 0.2s, -webkit-filter 0.2s;
   cursor: pointer;
-}
-
-.snack-box.success {
-  background: #4caf50;
-}
-
-.snack-box.info {
-  background: #2196f3;
-}
-
-.snack-box.warn {
-  background: #ff9800;
-}
-
-.snack-box.error {
-  background: #f44336;
 }
 
 .snack-box .snack-close.success {
@@ -152,6 +136,167 @@ li button:hover svg {
 .snack-box .snack-close:hover {
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
+}
+
+.snack-box.success {
+  background: #4caf50;
+}
+
+.snack-box.info {
+  background: #2196f3;
+}
+
+.snack-box.warn {
+  background: #ff9800;
+}
+
+.snack-box.error {
+  background: #f44336;
+}
+
+.alert-container {
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
+.alert-container.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.alert-container.hide {
+  display: none;
+}
+
+.alert-box {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 8px;
+  background: #FFF;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.alert-box .title-container {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  background: #234581;
+}
+
+.alert-box .title-container strong {
+  width: 100%;
+  text-align: center;
+  color: #FFF;
+}
+
+.alert-box .title-container .alert-close {
+  padding: 2px;
+  margin: 2px;
+  border-radius: 100%;
+  -webkit-transition: -webkit-filter 0.2s;
+  transition: -webkit-filter 0.2s;
+  transition: filter 0.2s;
+  transition: filter 0.2s, -webkit-filter 0.2s;
+  background: #234581;
+  cursor: pointer;
+}
+
+.alert-box .title-container .alert-close:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.alert-box .title-container .alert-close svg {
+  color: #FFF;
+}
+
+.alert-box .message-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+
+.alert-box .message-container .alert-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.alert-box .message-container .alert-icon.success svg {
+  color: #4caf50;
+}
+
+.alert-box .message-container .alert-icon.info svg {
+  background: #2196f3;
+}
+
+.alert-box .message-container .alert-icon.warn svg {
+  color: #ff9800;
+}
+
+.alert-box .message-container .alert-icon.error svg {
+  background: #f44336;
+}
+
+.alert-box .message-container .alert-message {
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+}
+
+.alert-box .message-container .alert-message strong {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6C6C80;
+}
+
+.alert-box .buttons-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.alert-box .buttons-container button {
+  width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  margin: 10px;
+  padding: 5px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  background: #6C6C80;
+}
+
+.alert-box .buttons-container button:hover {
+  background: #002e80;
+}
+
+.alert-box .buttons-container .button-confirm {
+  background: #234581;
+}
+
+.alert-box .buttons-container .button-confirm:hover {
+  background: #002e80;
 }
 
 #page-home {
@@ -262,6 +407,35 @@ li button:hover svg {
   font-size: 35px;
   color: #263238;
   margin-bottom: 20px;
+}
+
+#page-create-user form .avatar {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10rem;
+  width: 300px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+#page-create-user form .avatar img {
+  border-radius: 10rem;
+  width: 300px;
+}
+
+#page-create-user form .avatar img:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+#page-create-user form .avatar strong {
+  margin: 5px;
+  color: #737380;
+  line-height: 21px;
+  font-size: 16px;
 }
 
 #page-create-user form .field-group {

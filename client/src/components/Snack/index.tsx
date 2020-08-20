@@ -15,7 +15,7 @@ const Snack: React.FC<SnackProps> = ({
   type = 'info', message, open, close,
 }) => {
   const hidden = open ? 'show' : 'hide';
-  const infoIcon = (type === 'info' && (<MdInfo />))
+  const icon = (type === 'info' && (<MdInfo />))
                    || (type === 'warn' && (<MdWarning />))
                    || (type === 'success' && (<MdCheck />))
                    || (type === 'error' && (<MdErrorOutline />));
@@ -28,7 +28,7 @@ const Snack: React.FC<SnackProps> = ({
     <div className={`snack-container ${hidden}`}>
       <div className={`snack-box ${type}`}>
         <div className="snack-icon">
-          {infoIcon}
+          {icon}
         </div>
         <div className="snack-message">
           <strong>{message}</strong>

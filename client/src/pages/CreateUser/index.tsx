@@ -3,14 +3,15 @@ import { useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 import Snack, { SnackProps } from '../../components/Snack';
+import portrait from '../../assets/portrait.png';
 
 const CreateUser = () => {
+  const [avatar, setAvatar] = useState<string>(portrait);
   const [formData, setFormData] = useState({
     name: '',
     username: '',
     email: '',
     phone: '',
-    avatar: ''
   });
 
   const history = useHistory();
@@ -19,17 +20,33 @@ const CreateUser = () => {
   const [alertType, setAlertType] = useState<SnackProps['type']>('');
   const [alertMessage, setAlertMessage] = useState('');
 
+  let inputPic: HTMLInputElement;
+
+  const [file, setFile] = useState<File>();
+
   useEffect(() => {
     if (alertType === 'success') {
       if (!alertState) history.push('/');
-      
-      window.setTimeout(() => {
-        history.push('/');
-      }, 2000);
     }
   }, [alertState]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleCloseAlert = () => {
+  useEffect(() => {
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        setAvatar(event?.target?.result as string);
+      };
+    }
+  }, [file]);
+
+  function getRef(input: HTMLInputElement) { inputPic = input; };
+
+  function handlePicClick() {
+    inputPic.click();
+  };
+
+  function handleCloseAlert() {
     setAlertState(false);
   };
 
@@ -42,7 +59,21 @@ const CreateUser = () => {
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const { name, username, email, phone, avatar } = formData;
+    let msg = '';
+    const { name, username, email, phone } = formData;
+
+    if (name === '') msg = 'Preencha o campo Nome';
+    else if (username === '') msg = 'Preencha o campo Nome de Usuário';
+    else if (email === '') msg = 'Preencha o campo E-Mail';
+    else if (phone === '') msg = 'Preencha o campo Telefone';
+    else if (avatar === portrait) msg = 'Adicione uma Foto';
+
+    if (msg !== '') {
+      setAlertMessage(msg);
+      setAlertType('warn');
+      setAlertState(true);
+      return;
+    }
 
     const data = {
       name,
@@ -56,6 +87,10 @@ const CreateUser = () => {
       setAlertMessage('Usuário criado! Você será redirecionado.');
       setAlertType('success');
       setAlertState(true);
+
+      window.setTimeout(() => {
+        history.push('/');
+      }, 2000);
     });
   }
 
@@ -70,6 +105,24 @@ const CreateUser = () => {
       <div id="page-create-user">
         <form onSubmit={handleSubmit}>
           <h1>Cadastro de usuário</h1>
+
+          <div
+            className="avatar"
+            onClick={handlePicClick}
+          >
+            <img src={avatar} alt="avatar" />
+            <strong>Adicione uma Foto</strong>
+
+            <input
+              hidden
+              type="file"
+              accept="image/*"
+              ref={getRef}
+              onChange={(e) => {
+                setFile(e?.target?.files ? e?.target?.files[0] : undefined);
+              }}
+            />
+          </div>
 
           <div className="field-group">
             <div className="field">

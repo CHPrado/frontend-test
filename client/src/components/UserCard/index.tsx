@@ -5,10 +5,10 @@ import { UserProps } from '../../interfaces';
 
 interface UserCardProps {
   user: UserProps;
-  handleDeleteUser: (id: number) => {};
+  handleDeleteClick: () => void;
 }
 
-const UserCard: React.FC<UserCardProps> = ({ user, handleDeleteUser }) => (
+const UserCard: React.FC<UserCardProps> = ({ user, handleDeleteClick }) => (
   <li>
     <img src={user.avatar} alt={user.username} />
     
@@ -17,7 +17,7 @@ const UserCard: React.FC<UserCardProps> = ({ user, handleDeleteUser }) => (
     <span>{user.email}</span>
     <span>{user.phone}</span>
 
-    <button onClick={() => handleDeleteUser(user.id)} type="button">
+    <button onClick={handleDeleteClick} type="button">
       <FiTrash2 size={20} />
     </button>
   </li>

@@ -43,7 +43,7 @@ $error-color: #f44336;
     width: 100%;
     margin: 10px;
 
-    strong, .snack-message strong {
+    strong {
       font-size: 15px;
       font-weight: 500;
       color: #FFF;
@@ -57,25 +57,7 @@ $error-color: #f44336;
     border-radius: 100%;
     transition: filter 0.2s;
     cursor: pointer;
-  }
 
-  &.success {
-    background: $success-color;
-  }
-
-  &.info {
-    background: $info-color;
-  }
-
-  &.warn {
-    background: $warn-color;
-  }
-
-  &.error {
-    background: $error-color;
-  }
-
-  .snack-close {
     &.success {
       background: $success-color;
     }
@@ -95,5 +77,21 @@ $error-color: #f44336;
     &:hover {
       filter: brightness(90%);
     }
+  }
+
+  &.success {
+    background: $success-color;
+  }
+
+  &.info {
+    background: $info-color;
+  }
+
+  &.warn {
+    background: $warn-color;
+  }
+
+  &.error {
+    background: $error-color;
   }
 }
