@@ -15,7 +15,7 @@ Para rodar o client, entre na pasta e instale as dependências com `npm install`
 
 ## Funcionamento
 
-### / (home)
+### '/' (home)
 
 Na pagina inicial, rota `'/'` estarão listados todos os usuários cadastrados na API.
 As informações dos usuários são exibidas em um card, contendo a foto de avatar, nome, nome de usuário, e-mail e telefone.
@@ -24,7 +24,7 @@ As informações dos usuários são exibidas em um card, contendo a foto de avat
 
 Ao clicar no botão `'Cadastre um novo usário'`, será redirecionado para a página contendo o formulário para o cadastro de usuário.
 
-### /create-user
+### '/create-user'
 
 Na página de cadastro de usuário, rota `'/create-user'` terá os campos de avatar, nome, nome de usuário, e-mail e telefone de preenchimento obrigatório para cadastro.
 
