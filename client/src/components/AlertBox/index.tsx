@@ -22,12 +22,12 @@ const AlertBox: React.FC<AlertBoxProps> = ({
                    || (type === 'success' && (<MdCheck />))
                    || (type === 'error' && (<MdErrorOutline />));
 
-  const handleConfirm = () => {
+  function handleConfirm() {
     onConfirm();
     onClose();
   }
 
-  const handleClose = () => {
+  function handleClose() {
     onClose();
   };
 

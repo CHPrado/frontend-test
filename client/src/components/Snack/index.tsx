@@ -20,7 +20,7 @@ const Snack: React.FC<SnackProps> = ({
                    || (type === 'success' && (<MdCheck />))
                    || (type === 'error' && (<MdErrorOutline />));
 
-  const handleClose = () => {
+  function handleClose() {
     close();
   };
 

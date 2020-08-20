@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import { UserProps } from '../../interfaces';
-import UserCard from '../../components/UserCard';
-import Snack, { SnackProps } from '../../components/Snack';
 import AlertBox from '../../components/AlertBox';
+import Snack, { SnackProps } from '../../components/Snack';
+import UserCard from '../../components/UserCard';
+import { UserProps } from '../../interfaces';
 
 const Home = () => {
   const [users, setUsers] = useState<UserProps[]>([]);
@@ -28,7 +28,7 @@ const Home = () => {
     });
   }, []);
 
-  const handleDeleteClick = (user: UserProps) => {
+  function handleDeleteClick(user: UserProps) {
     setAlertTitle('Excluir Usuário');
     setAlertMessage(`Deseja excluir o usuário ${user.name}?`);
     setAlertType('warn');
@@ -37,16 +37,16 @@ const Home = () => {
     setDeletId(user.id);
   };
 
-  const handleAlertConfirm = () => {
+  function handleAlertConfirm() {
     if (typeof deleteId === 'number') handleDeleteUser(deleteId);
   }
 
-  const handleCloseAlert = () => {
+  function handleCloseAlert () {
     setDeletId(undefined);
     setAlertState(false);
   };
 
-  const handleCloseSnack = () => {
+  function handleCloseSnack() {
     setSnackState(false);
   };
 

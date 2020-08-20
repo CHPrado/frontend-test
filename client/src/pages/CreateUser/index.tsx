@@ -56,9 +56,7 @@ const CreateUser = () => {
     setFormData({ ...formData, [name]: value });
   }
 
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault();
-
+  function stopSubmit() {
     let msg = '';
     const { name, username, email, phone } = formData;
 
@@ -72,8 +70,16 @@ const CreateUser = () => {
       setAlertMessage(msg);
       setAlertType('warn');
       setAlertState(true);
-      return;
+      return true;
     }
+
+    return false;
+  }
+
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    const { name, username, email, phone } = formData;
 
     const data = {
       name,
@@ -82,6 +88,8 @@ const CreateUser = () => {
       phone,
       avatar
     };
+
+    if (stopSubmit()) return;
 
     await api.post('users', data).then(() => {
       setAlertMessage('Usuário criado! Você será redirecionado.');
